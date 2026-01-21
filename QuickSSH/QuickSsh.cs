@@ -76,7 +76,17 @@ class QuickSsh
         } 
         else if (args.Length >= 2 && args[0] == "ssh")
         {
-            string client = connections[args[1]]; // Get the SSH address from the connections
+            string client = string.Empty; // Get the SSH address from the connections
+            try
+            {
+                client = connections[args[1]];
+            }
+            catch (KeyNotFoundException) // Catch if connection does not exist
+            {
+                Console.WriteLine("Connection not found. Cannot connect to non-existent connection.");
+                Environment.Exit(1);
+            }
+            
             string[] additionalArgs = args[2..]; // Get any additional arguments
             
             try
@@ -93,7 +103,17 @@ class QuickSsh
         }
         else if (args.Length >= 2 && args[0] == "sftp")
         {
-            string client = connections[args[1]]; // Get the SFTP address from the connections
+            string client = string.Empty; // Get the SFTP address from the connections
+            try
+            {
+                client = connections[args[1]];
+            }
+            catch (KeyNotFoundException) // Catch if connection does not exist
+            {
+                Console.WriteLine("Connection not found. Cannot connect to non-existent connection.");
+                Environment.Exit(1);
+            }
+            
             string[] additionalArgs = args[2..]; // Get any additional arguments
             
             try
@@ -110,7 +130,17 @@ class QuickSsh
         }
         else if (args.Length >= 2 && args[0] == "scp")
         {
-            string client = connections[args[1]]; // Get the SCP address from the connections
+            string client = string.Empty; // Get the SCP address from the connections
+            try
+            {
+                client = connections[args[1]];
+            }
+            catch (KeyNotFoundException) // Catch if connection does not exist
+            {
+                Console.WriteLine("Connection not found. Cannot connect to non-existent connection.");
+                Environment.Exit(1);
+            }
+            
             string[] additionalArgs = args[2..]; // Get any additional arguments
             
             try
