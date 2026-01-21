@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 class QuickSsh
 {
-    private const string Version = "0.1.0";
+    private const string Version = "0.1.1";
     
     static void Main(string[] args)
     {
