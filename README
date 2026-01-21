@@ -32,4 +32,5 @@ The configuration file's location depends on the platform. Here are the location
 In the configuration file, you can change the paths for the different OpenSSH clients. But it's better to do it via `quickssh`.
 To do that, run the following command:
 
+
 `quickssh config <ssh/sftp/scp> <path>`
