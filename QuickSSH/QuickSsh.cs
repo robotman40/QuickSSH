@@ -93,7 +93,7 @@ class QuickSsh
             {
                 Connection.VerifyValidSshClient(); // Verify the SSH client path is valid
             }
-            catch (Exception e)
+            catch (Exceptions.InvalidClientException)
             {
                 Console.WriteLine("Invalid SSH client path. Please update the configuration.");
                 Environment.Exit(1);
@@ -120,7 +120,7 @@ class QuickSsh
             {
                 Connection.VerifyValidSftpClient(); // Verify the SFTP client path is valid
             }
-            catch (Exception e)
+            catch (Exceptions.InvalidClientException)
             {
                 Console.WriteLine("Invalid SFTP client path. Please update the configuration.");
                 Environment.Exit(1);
@@ -147,7 +147,7 @@ class QuickSsh
             {
                 Connection.VerifyValidScpClient(); // Verify the SCP client path is valid
             }
-            catch (Exception e)
+            catch (Exceptions.InvalidClientException)
             {
                 Console.WriteLine("Invalid SCP client path. Please update the configuration.");
                 Environment.Exit(1);
